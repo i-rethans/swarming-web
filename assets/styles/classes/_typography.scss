@@ -1,0 +1,24 @@
+/*
+  Base typography for the application
+  Refer to the design for the actual fonts and sizes
+*/
+
+body {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: $black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato";
+  font-weight: 600;
+  line-height: 130%;
+}

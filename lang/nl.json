@@ -1,0 +1,15 @@
+{
+  "swarming": {
+    "active-participants": "Actieve deelnemers",
+    "time-remaining": "Resterende tijd",
+    "explanation": "Vul een vraag in:",
+    "question-input-placeholder": "Type uw vraag hier",
+    "submit-question": "Voeg toe",
+    "start-session": "Start swarmaa"
+  },
+  "start": {
+    "welcome": "Welkom bij",
+    "swarma": "Swarmaa",
+    "start-swarm": "Start swarm"
+  }
+}

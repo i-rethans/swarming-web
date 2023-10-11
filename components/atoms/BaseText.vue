@@ -1,0 +1,63 @@
+<template>
+  <span class="base-text"><slot /></span>
+</template>
+
+<style lang="scss" scoped>
+.base-text {
+  white-space: pre-line;
+  font-size: 17px;
+  line-height: 130%;
+  font-weight: 400;
+}
+.semi-bold {
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+.bold {
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+.light {
+  font-weight: 300;
+}
+.extra-light {
+  font-weight: 200;
+}
+.italic {
+  font-style: italic;
+}
+.d-block {
+  display: block;
+}
+.text-light {
+  color: $white;
+}
+
+.centered {
+  text-align: center;
+}
+.centered-block {
+  display: block;
+  text-align: center;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.text-large {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+.text-extra-large {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+
+.blog-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 130%;
+}
+</style>

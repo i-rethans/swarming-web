@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "@nuxt/eslint-config",
+    "plugin:@intlify/vue-i18n/recommended",
+    // Make sure "prettier" is the last element in this list.
+    "prettier"
+  ],
+  "settings": {
+    "vue-i18n": {
+      "localeDir": "./lang/*.json"
+    }
+  },
+  "rules": {
+    "vue/no-multiple-template-root": "off",
+    "@intlify/vue-i18n/no-raw-text": [
+      "error",
+      {
+        "ignorePattern": "^[-#:()&%•]+$" // Allow common characters as raw text
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "**/*.scss"
+  ]
+  
+}

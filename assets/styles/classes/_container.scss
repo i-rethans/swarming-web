@@ -1,0 +1,31 @@
+$container-max-width: 1440px;
+
+/* Large screens */
+@include for-large-screen {
+  .container {
+    max-width: $container-max-width;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+}
+
+/* Medium screens */
+@include for-medium-screen {
+  .container {
+    max-width: $container-max-width;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+}
+
+/* Small screens */
+@include for-small-screen {
+  .container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0 1rem;
+  }
+}

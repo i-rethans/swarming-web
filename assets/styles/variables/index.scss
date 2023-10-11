@@ -1,0 +1,14 @@
+/* 
+ * Variables file, only for scss variables/mixins 
+ * DO NOT ADD ACTUAL STYLES HERE,
+ * they will be injected into every sfc and result in a lot of duplicate css for the end-user
+ */
+@forward "colors";
+@forward "responsive";
+
+// Uncategorized variables
+$border-radius: 0.75rem;
+$border-radius-medium: 0.5rem;
+$border-radius-small: 0.25rem;
+
+$easing: 0.3s ease-in-out;

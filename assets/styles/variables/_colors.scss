@@ -1,0 +1,27 @@
+// These are example colors and variable names,
+// It is best to refer to the design for color values and names
+$primary: #D201DD;
+$secondary: #01C6CC;
+
+$white: #ffffff;
+$black: #000000;
+
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+$off-white: #fafafa;
+$dark-purple: #664971;
+
+%text-tyle-body {
+  // font-family: $font-default;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}

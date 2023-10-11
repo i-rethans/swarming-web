@@ -1,0 +1,55 @@
+/* CSS Reset for Last 3 Versions of Major Browsers */
+
+/* Box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove margin and padding */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  &.unstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+/* Remove text decoration from links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset font properties */
+body {
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+
+  // To prevent jumping after loading, we assume the page will always be scrollable
+  overflow-y: scroll;
+}
+
+/* Reset form elements */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+*:focus {
+  outline: none;
+}

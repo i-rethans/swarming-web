@@ -1,0 +1,25 @@
+/* 
+  Use these classes to hide elements on certain screen sizes.
+*/
+
+/* Large screens */
+@include for-large-screen {
+  .hide-medium-up,
+  .hide-large {
+    display: none !important;
+  }
+}
+
+/* Medium screens */
+@include for-medium-screen {
+  .hide-medium-up {
+    display: none !important;
+  }
+}
+
+/* Small screens */
+@include for-small-screen {
+  .hide-small {
+    display: none !important;
+  }
+}

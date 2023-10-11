@@ -1,0 +1,49 @@
+/* EXAMPLE USAGE:
+
+  .my-box {
+    padding: 10px;
+
+    @include for-medium-screen {
+      padding: 20px;
+    }
+}
+*/
+
+$extra-small-screen: 636px;
+$small-screen: 768px;
+$breakpoint-medium: 1024px;
+$breakpoint-large: 1440px;
+
+/* Large screens */
+@mixin for-large-screen {
+  @media (min-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+/* Medium screens */
+@mixin for-medium-screen {
+  @media (max-width: $breakpoint-large) and (min-width: $breakpoint-medium) {
+    @content;
+  }
+}
+
+/* Medium screens and up */
+@mixin for-medium-screen-up {
+  @media (min-width: $breakpoint-medium) {
+    @content;
+  }
+}
+
+/* Small screens */
+@mixin for-small-screen {
+  @media (max-width: calc($breakpoint-medium - 1px)) {
+    @content;
+  }
+}
+
+@mixin for-extra-small-screen {
+  @media (max-width: calc($extra-small-screen - 1px)) {
+    @content;
+  }
+}
