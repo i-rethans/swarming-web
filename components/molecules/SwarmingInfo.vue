@@ -8,21 +8,27 @@
     <SwarmingInfoLine
       icon-src="ic_clock"
       :item-name="$t('swarming.time-remaining')"
-      :data="timer"
+      :data="toTime(sessionState?.swarming_time)"
     ></SwarmingInfoLine>
   </div>
 </template>
 
 <script setup lang="ts">
-const participants = 1;
-const timer = ref(10);
-const interval = setInterval(() => {
-  if (timer.value === 0) {
-    clearInterval(interval);
-  } else {
-    timer.value--;
-  }
-}, 1000);
+const props = defineProps<{
+  participants: number;
+  swarmingSession: ReturnType<typeof swarmingSocket>;
+}>();
+
+const { sessionState } = props.swarmingSession;
+
+const toTime = (time: number | undefined) => {
+  if (!time) return 0;
+  const minutes = Math.floor(time / 60000);
+  const minutesString = minutes < 10 ? `0${minutes}` : `${minutes}`;
+  const seconds = Math.ceil((time % 60000) / 1000);
+  const secondsString = seconds < 10 ? `0${seconds}` : `${seconds}`;
+  return `${minutesString}:${secondsString}`;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -30,5 +36,6 @@ const interval = setInterval(() => {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 80vw;
 }
 </style>

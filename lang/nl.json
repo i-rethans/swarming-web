@@ -5,11 +5,14 @@
     "explanation": "Vul een vraag in:",
     "question-input-placeholder": "Type uw vraag hier",
     "submit-question": "Voeg toe",
-    "start-session": "Start swarmaa"
+    "start-session": "Start swarm",
+    "waiting-for-participants": "Wachten op deelnemers...",
+    "copy-link": "Kopieer link",
+    "copied": "Gekopieerd!"
   },
   "start": {
     "welcome": "Welkom bij",
     "swarma": "Swarmaa",
-    "start-swarm": "Start swarm"
+    "create-swarm": "Maak swarm"
   }
 }

@@ -10,8 +10,8 @@ import { swarmingSocket } from "~/composables/SwarmingSocket";
         {{ $t("start.swarma") }}
       </BaseTitle>
     </div>
-    <BaseButton class="start" @click="startSession">
-      {{ $t("start.start-swarm") }}
+    <BaseButton class="purple" @click="startSession">
+      {{ $t("start.create-swarm") }}
     </BaseButton>
   </div>
 </template>

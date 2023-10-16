@@ -13,9 +13,6 @@ defineProps<{
 
 <style lang="scss" scoped>
 .base-button {
-  background-color: $off-white;
-  opacity: 0.7;
-  color: $black;
   border: none;
   padding: 1rem 1rem;
   font-size: 16px;
@@ -23,27 +20,58 @@ defineProps<{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 1.5rem;
 
   &.full-width {
     width: 100%;
   }
 
   &.swarm {
-    border-radius: 12px;
+    // border-radius: 12px;
     padding: 0.25rem 0.25rem;
   }
+  &.arrow-button {
+    width: 40px; /* Adjust the button width as needed */
+    height: 40px; /* Adjust the button height as needed */
+    border: none;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    background-color: $off-white;
+    opacity: 0.8;
+    position: relative;
+    transform: rotate(45deg);
+    border-radius: 5px;
 
-  &.start {
-    border-radius: 1.5rem;
-    font-size: 24px;
-    padding: 1.5rem 1.5rem;
-    font-weight: 600;
+    &.right-arrow {
+      clip-path: polygon(100% 100%, 100% 0%, 0% 0%);
+      // clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+      left: -20px;
+
+      // border-radius: 0 0 0 0.25em;
+    }
+
+    &.left-arrow {
+      left: 21px;
+      clip-path: polygon(100% 100%, 0% 100%, 0% 0%);
+      border-radius: 5px;
+    }
   }
 
-  &.question {
-    border-radius: 7px;
-    font-size: 16px;
-    padding: 1rem 1rem;
+  &.purple {
+    background-color: $dark-purple;
+    font-size: 24px;
+    padding: 1.5rem 2.5rem;
+    font-weight: 600;
+    color: $off-white;
+  }
+
+  &.white {
+    background-color: $off-white;
+    font-size: 1rem;
+    opacity: 0.8;
+    padding: 1rem 2rem;
+    font-weight: 600;
   }
 
   &.flash {

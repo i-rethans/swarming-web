@@ -11,7 +11,7 @@ import { swarmingSocket } from "~/composables/SwarmingSocket";
       @update:model-value="updateValue"
       @submit="submitQuestion"
     ></BaseInput>
-    <BaseButton class="question" @click="submitQuestion">
+    <BaseButton class="purple" @click="submitQuestion">
       {{ $t("swarming.submit-question") }}
     </BaseButton>
   </div>

@@ -51,7 +51,12 @@
 }
 
 .text-extra-large {
-  font-size: 1.75rem;
+  font-size: 3rem;
+  line-height: 2.25rem;
+}
+.text-extra-extra-large {
+  font-weight: 300;
+  font-size: 10rem;
   line-height: 2.25rem;
 }
 

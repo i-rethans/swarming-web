@@ -1,30 +1,55 @@
 <template>
   <div class="swarming">
-    <BaseText class="centered-block">{{ question }}</BaseText>
-    <Slider :swarming-session="swarmingSession"></Slider>
-    <BaseButton class="question" @click="start">
-      {{ $t("swarming.start-session") }}
-    </BaseButton>
-    <SwarmingInfo></SwarmingInfo>
+    <QuestionTitle :swarming-session="swarmingSession"></QuestionTitle>
+    <Slider v-if="swarmingState()" :swarming-session="swarmingSession"></Slider>
+    <AdminSettings
+      v-else-if="startedStateAndAdmin()"
+      :swarming-session="swarmingSession"
+    ></AdminSettings>
+    <BaseText v-else class="centered-block text-large">{{
+      $t("swarming.waiting-for-participants")
+    }}</BaseText>
+    <SwarmingInfo
+      :swarming-session="swarmingSession"
+      :participants="numberOfParticipants"
+    ></SwarmingInfo>
   </div>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
-  question?: string;
   swarmingSession: ReturnType<typeof swarmingSocket>;
 }>();
-const { startSwarming } = props.swarmingSession;
+const { numberOfParticipants, state, admin, question } = props.swarmingSession;
 
-const start = () => {
-  startSwarming();
+const startedStateAndAdmin = () => {
+  console.log(state.value, admin.value);
+  return state.value == "started" && admin.value;
 };
+
+const swarmingState = () => {
+  return state.value == "swarming";
+};
+
+watch(
+  () => state.value,
+  (state) => {
+    if (state == "finished") {
+      const router = useRouter();
+      const route = useRoute();
+      const uuid = route.query.id;
+      const localePath = useLocalePath();
+      router.push(localePath({ name: "swarm-result", query: { id: uuid } }));
+    }
+  },
+);
 </script>
 
 <style lang="scss" scoped>
 .swarming {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  align-items: center;
+  gap: 5rem;
 }
 </style>

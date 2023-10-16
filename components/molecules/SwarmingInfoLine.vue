@@ -12,7 +12,7 @@
 defineProps<{
   iconSrc: string;
   itemName?: string;
-  data?: number;
+  data?: number | string;
 }>();
 </script>
 

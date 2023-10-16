@@ -32,12 +32,22 @@ h6 {
   margin-top: 0em;
   margin-bottom: 0em;
   &.bold {
-    font-weight: 600;
+    font-weight: 500;
+  }
+
+  &.top {
+    position: relative;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  &.empty {
+    -webkit-text-fill-color: transparent;
   }
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 300;
 }
 h2 {

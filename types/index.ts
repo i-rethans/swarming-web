@@ -5,6 +5,7 @@
 export type Participant =  {
   id: string
   direction: string
+  admin: boolean
 };
 
 export type Session = {
@@ -13,6 +14,7 @@ export type Session = {
   question: string | null
   participants: Participant[]
   value: number 
+  swarming_time: number 
 }
 
 

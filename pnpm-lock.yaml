@@ -64,6 +64,9 @@ devDependencies:
   prettier:
     specifier: 3.0.2
     version: 3.0.2
+  qrcode.vue:
+    specifier: ^3.4.1
+    version: 3.4.1(vue@3.3.4)
   sass:
     specifier: ^1.67.0
     version: 1.68.0
@@ -7074,6 +7077,14 @@ packages:
   /punycode@2.3.0:
     resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
     engines: {node: '>=6'}
+    dev: true
+
+  /qrcode.vue@3.4.1(vue@3.3.4):
+    resolution: {integrity: sha512-wq/zHsifH4FJ1GXQi8/wNxD1KfQkckIpjK1KPTc/qwYU5/Bkd4me0w4xZSg6EXk6xLBkVDE0zxVagewv5EMAVA==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.3.4
     dev: true
 
   /queue-microtask@1.2.3:

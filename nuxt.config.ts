@@ -5,10 +5,13 @@ export default defineNuxtConfig({
     public: {
       baseUrl:
         process.env.RELEASE_LEVEL === "production"
-          ? "http://127.0.0.1:4000"
-          : "http://127.0.0.1:4000",
+          ? "http://google.com"
+          : "http://google.com",
       socketEndpoint:
-        process.env.RELEASE_LEVEL === "production"
+      process.env.RELEASE_LEVEL === "production"
+      // ? "ws://swarma-9d90cb1a4250.herokuapp.com/socket"
+      // : "ws://swarma-9d90cb1a4250.herokuapp.com/socket",
+        // process.env.RELEASE_LEVEL === "production"
           ? "ws://127.0.0.1:4000/socket"
           : "ws://127.0.0.1:4000/socket",
     },
@@ -21,7 +24,7 @@ export default defineNuxtConfig({
       "components/molecules",
       "components/organisms",
       "components/templates",
-    ],
+    ], 
   },
 
   /*

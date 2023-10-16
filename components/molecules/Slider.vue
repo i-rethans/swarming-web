@@ -1,26 +1,21 @@
 <template>
   <div class="slider centered">
-    <BaseTitle class="centered">{{ currentValue }}</BaseTitle>
-    <BaseSlider
-      v-model="currentValue"
-      :min-value="minValue"
-      :max-value="maxValue"
-    ></BaseSlider>
-    <div class="scale">
-      <BaseText> {{ minValue }}</BaseText>
-      <BaseText> {{ maxValue }}</BaseText>
-    </div>
-    <div class="buttons">
+    <BaseTitle class="centered">{{ Math.round(currentValue) }}</BaseTitle>
+
+    <div class="slider-buttons">
       <BaseButton
-        class="swarm"
+        class="swarm arrow-button left-arrow"
         :class="{ flash: leftActive }"
-        icon="ic-arrow-left"
         @click="decrease"
       ></BaseButton>
+      <BaseSlider
+        v-model="currentValue"
+        :min-value="minValue"
+        :max-value="maxValue"
+      ></BaseSlider>
       <BaseButton
-        class="swarm"
+        class="swarm arrow-button right-arrow"
         :class="{ flash: rightActive }"
-        icon="ic-arrow-right"
         @click="increase"
       ></BaseButton>
     </div>
@@ -54,20 +49,52 @@ const increase = () => {
 </script>
 
 <style lang="scss" scoped>
-.slider {
+// .slider {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 12px;
+// }
+.slider-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.buttons {
-  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 12px;
+  // gap: 0px;
 }
 
 .scale {
   display: flex;
   justify-content: space-between;
   gap: 12px;
+}
+
+.arrow-button {
+  width: 30px; /* Adjust the button width as needed */
+  height: 30px; /* Adjust the button height as needed */
+  border: none;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+
+  .arrow-left,
+  .arrow-right {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+  }
+
+  .arrow-left {
+    border-width: 15px 15px 15px 0;
+    border-color: transparent #007bff transparent transparent;
+    left: 0;
+  }
+
+  .arrow-right {
+    border-width: 15px 0 15px 15px;
+    border-color: transparent transparent transparent #007bff;
+    right: 0;
+  }
 }
 </style>

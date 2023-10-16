@@ -10,11 +10,10 @@
 
 <style lang="scss" scoped>
 .swarming-template {
-  background-image: url("public/logo.png"), url("public/background.png");
-  background-size: 60%, cover;
+  background-image: url("logo.png"), url("background.png");
+  background-size: 80%, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
-  // opacity: 0.3, 1;
   height: 100vh;
   width: 100vw;
   background-color: $off-white;
