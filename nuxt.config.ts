@@ -3,17 +3,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      baseUrl:
-        process.env.RELEASE_LEVEL === "production"
-          ? "https://swarming-web.web.app/"
-          : "https://swarming-web.web.app/",
-      socketEndpoint:
-      process.env.RELEASE_LEVEL === "production"
-      ? "wss://swarma-9d90cb1a4250.herokuapp.com/socket"
-      : "wss://swarma-9d90cb1a4250.herokuapp.com/socket",
-        // process.env.RELEASE_LEVEL === "production"
-          // ? "ws://127.0.0.1:4000/socket"
-          // : "ws://127.0.0.1:4000/socket",
+      baseUrl: "https://swarming-web.firebaseapp.com/"
+      socketEndpoint: "wss://swarma-9d90cb1a4250.herokuapp.com/socket"
+          // "ws://127.0.0.1:4000/socket",
     },
   },
 
