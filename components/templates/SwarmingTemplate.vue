@@ -10,7 +10,7 @@
 
 <style lang="scss" scoped>
 .swarming-template {
-  background-image: url("logo.png"), url("background.png");
+  background-image: url("images/logo.png"), url("images/background.png");
   background-size: 80%, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;

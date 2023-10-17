@@ -5,15 +5,15 @@ export default defineNuxtConfig({
     public: {
       baseUrl:
         process.env.RELEASE_LEVEL === "production"
-          ? "http://google.com"
-          : "http://google.com",
+          ? "http://swarming.netlify.app/"
+          : "http://swarming.netlify.app/",
       socketEndpoint:
       process.env.RELEASE_LEVEL === "production"
-      // ? "ws://swarma-9d90cb1a4250.herokuapp.com/socket"
-      // : "ws://swarma-9d90cb1a4250.herokuapp.com/socket",
+      ? "ws://swarma-9d90cb1a4250.herokuapp.com/socket"
+      : "ws://swarma-9d90cb1a4250.herokuapp.com/socket",
         // process.env.RELEASE_LEVEL === "production"
-          ? "ws://127.0.0.1:4000/socket"
-          : "ws://127.0.0.1:4000/socket",
+          // ? "ws://127.0.0.1:4000/socket"
+          // : "ws://127.0.0.1:4000/socket",
     },
   },
 
