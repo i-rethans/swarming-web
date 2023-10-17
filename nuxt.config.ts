@@ -5,8 +5,8 @@ export default defineNuxtConfig({
     public: {
       baseUrl:
         process.env.RELEASE_LEVEL === "production"
-          ? "http://swarming.netlify.app/"
-          : "http://swarming.netlify.app/",
+          ? "https://swarming-web.web.app/"
+          : "https://swarming-web.web.app/",
       socketEndpoint:
       process.env.RELEASE_LEVEL === "production"
       ? "ws://swarma-9d90cb1a4250.herokuapp.com/socket"
