@@ -14,5 +14,8 @@
     "welcome": "Welkom bij",
     "swarma": "Swarmaa",
     "create-swarm": "Maak swarm"
+  },
+  "result": {
+    "home": "Home pagina"
   }
 }

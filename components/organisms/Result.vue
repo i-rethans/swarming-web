@@ -2,7 +2,9 @@
   <div class="result-container">
     <QuestionTitle :swarming-session="swarmingSession"></QuestionTitle>
     <ResultValue :swarming-session="swarmingSession"></ResultValue>
-    <BaseTitle heading-level="1" class="empty">{{ "." }}</BaseTitle>
+    <BaseButton class="purple" @click="toHome">{{
+      $t("result.home")
+    }}</BaseButton>
   </div>
 </template>
 
@@ -10,6 +12,12 @@
 defineProps<{
   swarmingSession: ReturnType<typeof swarmingSocket>;
 }>();
+
+const toHome = () => {
+  const router = useRouter();
+  const localePath = useLocalePath();
+  router.push(localePath({ name: "index" }));
+};
 </script>
 
 <style lang="scss" scoped>
