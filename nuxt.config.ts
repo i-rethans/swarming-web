@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      baseUrl: "https://swarming-web.firebaseapp.com/"
+      baseUrl: "https://swarming-web.firebaseapp.com/",
       socketEndpoint: "wss://swarma-9d90cb1a4250.herokuapp.com/socket"
           // "ws://127.0.0.1:4000/socket",
     },
