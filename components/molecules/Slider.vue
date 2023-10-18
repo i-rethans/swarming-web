@@ -1,6 +1,5 @@
 <template>
   <div class="slider">
-    <BaseLabel class="value-label">{{ "test" }}</BaseLabel>
     <BaseTitle class="centered">{{ Math.round(currentValue) }}</BaseTitle>
 
     <div class="slider-buttons">
@@ -36,35 +35,5 @@ const maxValue = 20;
   display: flex;
   justify-content: space-between;
   gap: 12px;
-}
-
-.arrow-button {
-  width: 30px; /* Adjust the button width as needed */
-  height: 30px; /* Adjust the button height as needed */
-  border: none;
-  background: transparent;
-  position: relative;
-  cursor: pointer;
-  padding: 0;
-
-  .arrow-left,
-  .arrow-right {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    position: absolute;
-  }
-
-  .arrow-left {
-    border-width: 15px 15px 15px 0;
-    border-color: transparent #007bff transparent transparent;
-    left: 0;
-  }
-
-  .arrow-right {
-    border-width: 15px 0 15px 15px;
-    border-color: transparent transparent transparent #007bff;
-    right: 0;
-  }
 }
 </style>
