@@ -101,7 +101,7 @@ export const swarmingSocket = (session_id: string) => {
   const startSwarming = ()  => {
     console.log("startSwarming")
 
-    // channel?.push("start", {})
+    channel?.push("start", {})
     state.value = "swarming"
   }
 
