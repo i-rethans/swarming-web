@@ -36,9 +36,9 @@ h6 {
   }
 
   &.top {
-    position: relative;
+    // position: absolute;
     text-align: center;
-    margin-top: 0;
+    // top: 10vh;
   }
 
   &.empty {

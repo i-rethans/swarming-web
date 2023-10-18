@@ -1,7 +1,10 @@
 <template>
   <SwarmingTemplate v-if="swarmingSession">
     <template #content>
-      <Swarming v-if="question" :swarming-session="swarmingSession"></Swarming>
+      <WaitingRoom
+        v-if="question"
+        :swarming-session="swarmingSession"
+      ></WaitingRoom>
       <QuestionInput
         v-if="!question"
         v-model="question"

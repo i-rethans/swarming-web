@@ -26,4 +26,9 @@
   overflow: auto;
   padding: 2rem 3rem;
 }
+
+.right-arrow {
+  width: 200px;
+  height: 200px;
+}
 </style>

@@ -8,13 +8,6 @@
 .base-label {
   border-radius: 12px;
   padding: 0.5rem;
-  color: $white;
-
-  &.green {
-    background-color: $green;
-  }
-  &.orange {
-    background-color: $orange;
-  }
+  color: $dark-purple;
 }
 </style>

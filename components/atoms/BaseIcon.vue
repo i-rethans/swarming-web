@@ -21,7 +21,7 @@ const iconSrc = computed(() => {
 }
 
 .size-24 {
-  width: 48px;
-  height: 48px;
+  width: 24px;
+  height: 24px;
 }
 </style>

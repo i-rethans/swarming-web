@@ -44,6 +44,10 @@
 .strikethrough {
   text-decoration: line-through;
 }
+.text-data {
+  font-size: 2rem;
+  line-height: 1.5rem;
+}
 
 .text-large {
   font-size: 1.25rem;

@@ -14,4 +14,17 @@ if (!uuid) {
   router.push(localePath({ name: "start" }));
 }
 const swarmingSession = swarmingSocket(uuid as string);
+
+watch(
+  () => swarmingSession?.state.value,
+  (state) => {
+    if (state == "finished") {
+      const router = useRouter();
+      const route = useRoute();
+      const uuid = route.query.id;
+      const localePath = useLocalePath();
+      router.push(localePath({ name: "swarm-result", query: { id: uuid } }));
+    }
+  },
+);
 </script>

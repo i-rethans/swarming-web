@@ -4,11 +4,19 @@
       id="swarming-title"
       :swarming-session="swarmingSession"
     ></QuestionTitle>
-    <Slider :swarming-session="swarmingSession"></Slider>
+    <div>
+      <Slider :swarming-session="swarmingSession"></Slider>
+    </div>
+
     <SwarmingInfo
       :swarming-session="swarmingSession"
       :participants="numberOfParticipants"
     ></SwarmingInfo>
+    <ButtonBar
+      :swarming-session="swarmingSession"
+      :button-text="$t('swarming.back')"
+      button-target="swarm"
+    ></ButtonBar>
   </div>
 </template>
 
@@ -24,6 +32,6 @@ const { numberOfParticipants } = props.swarmingSession;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25vh;
+  gap: 10vh;
 }
 </style>

@@ -8,7 +8,9 @@
     "start-session": "Start swarm",
     "waiting-for-participants": "Wachten op deelnemers...",
     "copy-link": "Kopieer link",
-    "copied": "Gekopieerd!"
+    "copied": "Gekopieerd!",
+    "how-to": "Hoe werkt het?",
+    "back": "Terug"
   },
   "start": {
     "welcome": "Welkom bij",

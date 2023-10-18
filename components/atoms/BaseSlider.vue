@@ -30,7 +30,8 @@ defineProps<{
   appearance: none;
   appearance: none;
   width: 100%;
-  height: 5px;
+  height: 20px;
+  border-radius: 20px;
   background: $off-white;
   opacity: 0.8;
   transition: opacity 0.2s;
@@ -39,10 +40,11 @@ defineProps<{
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 10px;
-  height: 10px;
-  border-radius: 25%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   background: $secondary;
   cursor: pointer;
+  z-index: 2;
 }
 </style>

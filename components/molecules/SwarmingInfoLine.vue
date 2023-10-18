@@ -4,7 +4,7 @@
       <BaseIcon :src="iconSrc"></BaseIcon>
       <BaseText>{{ itemName }}</BaseText>
     </div>
-    <BaseText>{{ data }}</BaseText>
+    <BaseText class="text-data light">{{ data }}</BaseText>
   </div>
 </template>
 

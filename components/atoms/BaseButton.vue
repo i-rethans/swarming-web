@@ -19,44 +19,17 @@ defineProps<{
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border-radius: 1.5rem;
 
-  &.full-width {
-    width: 100%;
-  }
+  // &.full-width {
+  //   width: 100%;
+  // }
 
-  &.swarm {
-    // border-radius: 12px;
-    padding: 0.25rem 0.25rem;
-  }
-  &.arrow-button {
-    width: 40px; /* Adjust the button width as needed */
-    height: 40px; /* Adjust the button height as needed */
-    border: none;
-    position: relative;
-    cursor: pointer;
-    padding: 0;
-    background-color: $off-white;
-    opacity: 0.8;
-    position: relative;
-    transform: rotate(45deg);
-    border-radius: 5px;
-
-    &.right-arrow {
-      clip-path: polygon(100% 100%, 100% 0%, 0% 0%);
-      // clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-      left: -20px;
-
-      // border-radius: 0 0 0 0.25em;
-    }
-
-    &.left-arrow {
-      left: 21px;
-      clip-path: polygon(100% 100%, 0% 100%, 0% 0%);
-      border-radius: 5px;
-    }
-  }
+  // &.swarm {
+  //   // border-radius: 12px;
+  //   padding: 0.25rem 0.25rem;
+  // }
 
   &.purple {
     background-color: $dark-purple;
@@ -74,7 +47,39 @@ defineProps<{
     font-weight: 600;
   }
 
-  &.flash {
+  &.blue {
+    background-color: $blue;
+    font-size: 1rem;
+    opacity: 0.8;
+    padding: 1rem 2rem;
+    font-weight: 700;
+  }
+
+  &.no-background {
+    background-color: transparent;
+  }
+
+  &.inactive {
+    cursor: default;
+  }
+
+  &.low {
+    position: absolute;
+    bottom: 10vh;
+  }
+}
+
+.toggle-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 90px;
+  transition: 0.1s;
+  background: $dark-purple;
+  opacity: 0.1;
+
+  &.active {
+    opacity: 1;
+
     background-color: $dark-purple;
 
     animation-name: flash;

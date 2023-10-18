@@ -1,5 +1,5 @@
 <template>
-  <div class="admin">
+  <div class="share-page">
     <div class="share">
       <qrcode-vue
         :value="value"
@@ -11,8 +11,8 @@
         {{ isCopied ? $t("swarming.copied") : $t("swarming.copy-link") }}
       </BaseButton>
     </div>
-    <BaseButton class="purple" @click="start">
-      {{ $t("swarming.start-session") }}
+    <BaseButton class="blue" :swarming-session="swarmingSession" @click="back">
+      {{ $t("swarming.back") }}
     </BaseButton>
   </div>
 </template>
@@ -34,16 +34,19 @@ console.log(baseUrl);
 
 const shareUrl = `${baseUrl}${route.href}`;
 
-const start = () => {
-  startSwarming();
-};
-
 const copy = () => {
   navigator.clipboard.writeText(shareUrl);
   isCopied.value = true;
 };
 
-console.log(shareUrl);
+const back = () => {
+  const route = useRoute();
+
+  const router = useRouter();
+  const localePath = useLocalePath();
+
+  router.push(localePath({ name: "swarm", query: { id: route.query.id } }));
+};
 
 const value = ref(shareUrl);
 const level = ref<Level>("M");
@@ -57,10 +60,10 @@ const renderAs = ref<RenderAs>("svg");
   align-items: center;
   gap: 1rem;
 }
-.admin {
+.share-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5rem;
+  gap: 1rem;
 }
 </style>

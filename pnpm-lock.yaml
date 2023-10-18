@@ -55,6 +55,9 @@ devDependencies:
   eslint-config-prettier:
     specifier: ^9.0.0
     version: 9.0.0(eslint@8.50.0)
+  leader-line-vue:
+    specifier: ^2.1.1
+    version: 2.1.1
   lint-staged:
     specifier: ^14.0.1
     version: 14.0.1
@@ -4922,6 +4925,10 @@ packages:
     engines: {node: '>= 0.6.3'}
     dependencies:
       readable-stream: 2.3.8
+    dev: true
+
+  /leader-line-vue@2.1.1:
+    resolution: {integrity: sha512-ZfNoDcwgfHESNLErfPBdJ4I/1tbXLBUFwGfbqAZvTcOghcm7UtUm7mUPZVAOThlO3q75n8pZmDTGtM/Gwfx+xA==}
     dev: true
 
   /levn@0.4.1:
