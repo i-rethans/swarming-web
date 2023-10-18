@@ -75,7 +75,7 @@ defineProps<{
   }
 
   &.flash {
-    color: $off-white;
+    background-color: $dark-purple;
 
     animation-name: flash;
     animation-duration: 1s;
@@ -97,39 +97,39 @@ defineProps<{
 
   @keyframes flash {
     0% {
-      opacity: 0.7;
+      opacity: 1;
     }
     50% {
       opacity: 0.3;
     }
     100% {
-      opacity: 0.7;
+      opacity: 1;
     }
   }
 
   //Firefox 1+
   @-webkit-keyframes flash {
     0% {
-      opacity: 0.7;
+      opacity: 1;
     }
     50% {
       opacity: 0.3;
     }
     100% {
-      opacity: 0.7;
+      opacity: 1;
     }
   }
 
   //Safari 3-4
   @-moz-keyframes flash {
     0% {
-      opacity: 0.7;
+      opacity: 1;
     }
     50% {
       opacity: 0.3;
     }
     100% {
-      opacity: 0.7;
+      opacity: 1;
     }
   }
 }

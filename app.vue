@@ -10,6 +10,7 @@ useHead({
   htmlAttrs: {
     lang: "nl",
   },
+  meta: [{ name: "Swarma" }],
   link: [
     {
       rel: "icon",
