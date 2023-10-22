@@ -8,27 +8,18 @@
 const router = useRouter();
 const route = useRoute();
 const uuid = route.query.id?.toString();
+const localePath = useLocalePath();
 
 if (!uuid) {
-  const localePath = useLocalePath();
   router.push(localePath({ name: "start" }));
 }
 const swarmingSession = swarmingSocket(uuid as string);
-
 watch(
   () => swarmingSession?.state.value,
   (state) => {
     if (state == "finished") {
-      const router = useRouter();
-      const route = useRoute();
-      const uuid = route.query.id;
-      const localePath = useLocalePath();
       router.push(localePath({ name: "swarm-result", query: { id: uuid } }));
     } else if (state == "swarming") {
-      const router = useRouter();
-      const route = useRoute();
-      const uuid = route.query.id;
-      const localePath = useLocalePath();
       router.push(localePath({ name: "swarm-session", query: { id: uuid } }));
     }
   },

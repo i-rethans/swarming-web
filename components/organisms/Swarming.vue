@@ -5,7 +5,7 @@
       :swarming-session="swarmingSession"
       :text="question"
     ></QuestionTitle>
-    <Slider :swarming-session="swarmingSession"></Slider>
+    <Slider :swarming-session="swarmingSession" :explanation="false"></Slider>
     <SwarmingInfo
       :swarming-session="swarmingSession"
       :participants="numberOfParticipants"
@@ -25,6 +25,6 @@ const { numberOfParticipants, question } = props.swarmingSession;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25vh;
+  gap: 20vh;
 }
 </style>

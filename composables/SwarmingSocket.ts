@@ -142,9 +142,6 @@ export const swarmingSocket = (session_id: string) => {
     state.value = "finished"
   });
   
-  
-  
-  //  setHeartbeat()
   });
 
 

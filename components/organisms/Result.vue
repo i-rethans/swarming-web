@@ -1,6 +1,9 @@
 <template>
   <div class="result-container">
-    <QuestionTitle :swarming-session="swarmingSession"></QuestionTitle>
+    <QuestionTitle
+      :swarming-session="swarmingSession"
+      :text="question"
+    ></QuestionTitle>
     <ResultValue :swarming-session="swarmingSession"></ResultValue>
     <BaseButton class="purple" @click="toHome">{{
       $t("result.home")
@@ -9,9 +12,11 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   swarmingSession: ReturnType<typeof swarmingSocket>;
 }>();
+
+const { question } = props.swarmingSession;
 
 const toHome = () => {
   const router = useRouter();

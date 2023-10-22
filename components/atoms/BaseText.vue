@@ -69,4 +69,13 @@
   font-size: 1.5rem;
   line-height: 130%;
 }
+
+.explain {
+  color: $dark-purple;
+  font-size: 0.75rem;
+  width: 25vw;
+  text-align: center;
+  position: absolute;
+  font-style: italic;
+}
 </style>

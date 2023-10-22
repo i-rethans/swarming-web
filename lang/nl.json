@@ -13,7 +13,10 @@
     "back": "Terug"
   },
   "explanation": {
-    "title": "Swarming Uitleg"
+    "title": "Swarming Uitleg",
+    "group-decision": "Dit is het huidige groepsbesluit, tot stand gekomen door input van iedereen in de swarm",
+    "toggle": "Geef met deze knoppen aan of je vind dat het getal hoger of lager moet zijn dan het huidige groepsbesluit",
+    "time": "Dit is de resterende tijd voor deze swarm"
   },
   "start": {
     "welcome": "Welkom bij",
