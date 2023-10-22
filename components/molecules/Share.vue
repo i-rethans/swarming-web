@@ -30,9 +30,8 @@ const isCopied = ref(false);
 const route = useRoute();
 
 const { baseUrl } = useRuntimeConfig().public;
-console.log(baseUrl);
 
-const shareUrl = `${baseUrl}${route.href}`;
+const shareUrl = `${baseUrl}swarm?id=${route.query.id}`;
 
 const copy = () => {
   navigator.clipboard.writeText(shareUrl);

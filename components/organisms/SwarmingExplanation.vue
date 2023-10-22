@@ -3,6 +3,7 @@
     <QuestionTitle
       id="swarming-title"
       :swarming-session="swarmingSession"
+      :text="$t('explanation.title')"
     ></QuestionTitle>
     <div>
       <Slider :swarming-session="swarmingSession"></Slider>

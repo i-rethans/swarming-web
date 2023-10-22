@@ -1,14 +1,12 @@
 <template>
-  <BaseTitle heading-level="2" class="question-value top">{{
-    question
-  }}</BaseTitle>
+  <BaseTitle heading-level="2" class="question-value top">{{ text }}</BaseTitle>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   swarmingSession: ReturnType<typeof swarmingSocket>;
+  text: string;
 }>();
-const { question } = props.swarmingSession;
 </script>
 
 <style lang="scss" scoped>

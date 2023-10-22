@@ -1,6 +1,9 @@
 <template>
   <div class="swarming">
-    <QuestionTitle :swarming-session="swarmingSession"></QuestionTitle>
+    <QuestionTitle
+      :swarming-session="swarmingSession"
+      :text="question"
+    ></QuestionTitle>
     <div class="swarming-middle">
       <BaseButton
         v-if="startedStateAndAdmin()"
@@ -31,7 +34,7 @@
 const props = defineProps<{
   swarmingSession: ReturnType<typeof swarmingSocket>;
 }>();
-const { numberOfParticipants, state, admin, startSwarming } =
+const { numberOfParticipants, state, admin, startSwarming, question } =
   props.swarmingSession;
 
 const startedStateAndAdmin = () => {
@@ -58,7 +61,7 @@ const start = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25vh;
+  gap: 20vh;
 }
 
 .swarming-middle {

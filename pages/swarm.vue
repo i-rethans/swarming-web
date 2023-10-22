@@ -24,6 +24,12 @@ watch(
       const uuid = route.query.id;
       const localePath = useLocalePath();
       router.push(localePath({ name: "swarm-result", query: { id: uuid } }));
+    } else if (state == "swarming") {
+      const router = useRouter();
+      const route = useRoute();
+      const uuid = route.query.id;
+      const localePath = useLocalePath();
+      router.push(localePath({ name: "swarm-session", query: { id: uuid } }));
     }
   },
 );
