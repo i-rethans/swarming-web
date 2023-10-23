@@ -37,6 +37,7 @@ defineProps<{
     padding: 1.5rem 2.5rem;
     font-weight: 600;
     color: $off-white;
+    box-shadow: 0px 3px 5px $black;
   }
 
   &.white {
@@ -53,6 +54,7 @@ defineProps<{
     opacity: 0.8;
     padding: 1rem 2rem;
     font-weight: 700;
+    box-shadow: 0px 3px 5px $black;
   }
 
   &.no-background {

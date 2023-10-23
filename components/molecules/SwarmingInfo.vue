@@ -36,6 +36,6 @@ const toTime = (time: number | undefined) => {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 50vw;
+  width: 70vw;
 }
 </style>

@@ -47,7 +47,7 @@ h6 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 300;
 }
 h2 {
@@ -55,7 +55,8 @@ h2 {
   font-weight: 300;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 400;
 }
 h4 {
   font-size: 1.25rem;

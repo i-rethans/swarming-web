@@ -61,7 +61,7 @@ const start = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20vh;
+  gap: 15vh;
 }
 
 .swarming-middle {

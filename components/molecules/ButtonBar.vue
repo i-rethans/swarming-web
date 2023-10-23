@@ -48,6 +48,6 @@ const goToButtonTarget = () => {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-around;
 }
 </style>

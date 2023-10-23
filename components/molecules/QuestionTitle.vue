@@ -1,5 +1,5 @@
 <template>
-  <BaseTitle heading-level="2" class="question-value top">{{ text }}</BaseTitle>
+  <BaseTitle heading-level="3" class="question-value top">{{ text }}</BaseTitle>
 </template>
 
 <script setup lang="ts">

@@ -48,6 +48,11 @@ const change = () => {
     increase();
   }
 };
+
+onMounted(() => {
+  leftActive.value = false;
+  rightActive.value = false;
+});
 </script>
 <style lang="scss" scoped>
 .toggle {
