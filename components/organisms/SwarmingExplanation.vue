@@ -17,7 +17,7 @@
       :participants="numberOfParticipants"
     ></SwarmingInfo>
     <div v-if="explanation" class="time-explanation">
-      <BaseIcon src="ic_curved_left"></BaseIcon>
+      <BaseIcon src="time_arrow" class="time-arrow"></BaseIcon>
       <BaseText class="explain">{{ $t("explanation.time") }}</BaseText>
     </div>
     <ButtonBar
@@ -47,5 +47,15 @@ const explanation = true;
   position: absolute;
   left: 35vw;
   top: 73vh;
+}
+
+.time-arrow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 25vw;
+  // top: 5vh;
+  transform: scale(1, -1);
+  rotate: -10deg;
 }
 </style>

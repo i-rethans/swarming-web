@@ -4,7 +4,7 @@
       <BaseText class="explain">{{
         $t("explanation.group-decision")
       }}</BaseText>
-      <BaseIcon class="decision-arrow" src="ic_curved_right"></BaseIcon>
+      <BaseIcon class="group-arrow" src="group_arrow"></BaseIcon>
     </div>
     <BaseTitle id="start" class="centered">{{
       Math.round(currentValue)
@@ -18,7 +18,7 @@
       ></BaseSlider>
       <BaseToggle :swarming-session="swarmingSession"></BaseToggle>
       <div v-if="explanation" class="toggle-explanation">
-        <BaseIcon src="ic_curved_left"></BaseIcon>
+        <BaseIcon src="lower_arrow" class="toggle-arrow"></BaseIcon>
         <BaseText class="explain">{{ $t("explanation.toggle") }}</BaseText>
       </div>
     </div>
@@ -57,10 +57,21 @@ const maxValue = 20;
   top: 20vh;
 }
 
-.decision-arrow {
+.group-arrow {
   position: absolute;
+  width: 20px;
+  height: 20px;
   left: 25vw;
-  top: 3vh;
+  top: 5vh;
+}
+
+.toggle-arrow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -5vw;
+  top: 5vh;
+  rotate: -45deg;
 }
 
 .scale {
