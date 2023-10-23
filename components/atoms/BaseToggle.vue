@@ -21,21 +21,21 @@
 <script setup lang="ts">
 const props = defineProps<{
   swarmingSession: ReturnType<typeof swarmingSocket>;
+  explanation: boolean;
 }>();
 const { changeDirection } = props.swarmingSession;
 const rightActive = ref(false);
 const leftActive = ref(false);
 
 const decrease = () => {
-  console.log("hi");
-  !leftActive.value ? changeDirection("left") : null;
+  !leftActive.value && !props.explanation ? changeDirection("left") : null;
 
   leftActive.value = true;
   rightActive.value = false;
 };
 
 const increase = () => {
-  !rightActive.value ? changeDirection("right") : null;
+  !rightActive.value && !props.explanation ? changeDirection("right") : null;
 
   rightActive.value = true;
   leftActive.value = false;

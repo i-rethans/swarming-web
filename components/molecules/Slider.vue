@@ -16,7 +16,10 @@
         :min-value="minValue"
         :max-value="maxValue"
       ></BaseSlider>
-      <BaseToggle :swarming-session="swarmingSession"></BaseToggle>
+      <BaseToggle
+        :explanation="explanation"
+        :swarming-session="swarmingSession"
+      ></BaseToggle>
       <div v-if="explanation" class="toggle-explanation">
         <BaseIcon src="lower_arrow" class="toggle-arrow"></BaseIcon>
         <BaseText class="explain">{{ $t("explanation.toggle") }}</BaseText>
