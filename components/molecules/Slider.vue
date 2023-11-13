@@ -34,9 +34,9 @@ const props = defineProps<{
   swarmingSession: ReturnType<typeof swarmingSocket>;
   explanation: boolean;
 }>();
-const { currentValue } = props.swarmingSession;
+const { currentValue, sessionState } = props.swarmingSession;
 const minValue = 0;
-const maxValue = 20;
+const maxValue = sessionState.value?.range_max;
 </script>
 
 <style lang="scss" scoped>

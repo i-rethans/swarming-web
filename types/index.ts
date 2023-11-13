@@ -15,6 +15,7 @@ export type Session = {
   participants: Participant[]
   value: number 
   swarming_time: number 
+  range_max: number | null
 }
 
 

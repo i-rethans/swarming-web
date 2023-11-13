@@ -2,14 +2,10 @@
   <SwarmingTemplate v-if="swarmingSession">
     <template #content>
       <WaitingRoom
-        v-if="question"
+        v-if="sessionState?.question"
         :swarming-session="swarmingSession"
       ></WaitingRoom>
-      <QuestionInput
-        v-if="!question"
-        v-model="question"
-        @update:model-value="updateQuestion"
-      ></QuestionInput>
+      <SessionInput v-else :swarming-session="swarmingSession"></SessionInput>
     </template>
   </SwarmingTemplate>
 </template>
@@ -19,9 +15,5 @@ const props = defineProps<{
   swarmingSession: ReturnType<typeof swarmingSocket>;
 }>();
 
-const { question, setQuestion } = props.swarmingSession;
-
-const updateQuestion = (questionInput: string) => {
-  setQuestion(questionInput);
-};
+const { sessionState } = props.swarmingSession;
 </script>

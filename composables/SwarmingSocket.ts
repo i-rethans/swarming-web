@@ -75,13 +75,12 @@ export const swarmingSocket = (session_id: string) => {
     });
   }
 
-  const setQuestion = (questionInput: string)  => {
-    channel?.push("set_question", { question: questionInput, participant_id: participantId })
+  const updateSession = (questionInput: string, rangeInput: number)  => {
+    channel?.push("update_session", { question: questionInput, participant_id: participantId, range_max: rangeInput })
     .receive("ok", (session: Session) => {
       sessionState.value = session
       question.value = session.question
       admin.value = true
-      console.log("setQuestion", admin.value)
 
     })
     .receive("error", (reasons) => {
@@ -156,7 +155,7 @@ export const swarmingSocket = (session_id: string) => {
     startSwarming,
     changeDirection,
     currentValue,
-    setQuestion,
+    updateSession,
     startSession,
     sessionState,
     numberOfParticipants,

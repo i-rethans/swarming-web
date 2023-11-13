@@ -4,6 +4,7 @@
 
 <style lang="scss" scoped>
 .base-text {
+  font-family: "Lato", sans-serif;
   white-space: pre-line;
   font-size: 17px;
   line-height: 130%;
@@ -48,10 +49,14 @@
   font-size: 2rem;
   line-height: 1.5rem;
 }
+.text-small {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
 
 .text-large {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1rem;
 }
 
 .text-extra-large {

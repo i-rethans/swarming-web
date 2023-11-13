@@ -2,7 +2,7 @@
   "swarming": {
     "active-participants": "Actieve deelnemers",
     "time-remaining": "Resterende tijd",
-    "explanation": "Vul een vraag in:",
+    "session-input": "Swarming instellingen",
     "question-input-placeholder": "Type uw vraag hier",
     "submit-question": "Voeg toe",
     "start-session": "Start swarm",
@@ -10,7 +10,9 @@
     "copy-link": "Kopieer link",
     "copied": "Gekopieerd!",
     "how-to": "Hoe werkt het?",
-    "back": "Terug"
+    "back": "Terug",
+    "range": "Maximale uitkomst:",
+    "range-values": "(0-100)"
   },
   "explanation": {
     "title": "Swarming Uitleg",
