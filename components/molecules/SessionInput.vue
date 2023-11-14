@@ -2,7 +2,7 @@ import { swarmingSocket } from "~/composables/SwarmingSocket";
 
 <template>
   <div class="session-input-container">
-    <BaseTitle heading-level="2">
+    <BaseTitle heading-level="3" class="question-value">
       {{ $t("swarming.session-input") }}
     </BaseTitle>
     <div class="input-items">

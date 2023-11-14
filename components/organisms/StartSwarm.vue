@@ -3,10 +3,10 @@ import { swarmingSocket } from "~/composables/SwarmingSocket";
 <template>
   <div class="swarming-input-container">
     <div class="swarma">
-      <BaseTitle heading-level="1">
+      <BaseTitle heading-level="2">
         {{ $t("start.welcome") }}
       </BaseTitle>
-      <BaseTitle heading-level="1">
+      <BaseTitle heading-level="2">
         {{ $t("start.swarma") }}
       </BaseTitle>
     </div>
