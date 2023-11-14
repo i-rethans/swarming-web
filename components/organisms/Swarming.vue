@@ -1,9 +1,9 @@
 <template>
-  <div class="swarming">
+  <div v-if="sessionState" class="swarming">
     <QuestionTitle
       id="swarming-title"
       :swarming-session="swarmingSession"
-      :text="question"
+      :text="sessionState?.question ? sessionState?.question : ''"
     ></QuestionTitle>
     <Slider :swarming-session="swarmingSession" :explanation="false"></Slider>
     <SwarmingInfo
@@ -17,7 +17,7 @@
 const props = defineProps<{
   swarmingSession: ReturnType<typeof swarmingSocket>;
 }>();
-const { numberOfParticipants, question } = props.swarmingSession;
+const { numberOfParticipants, sessionState } = props.swarmingSession;
 </script>
 
 <style lang="scss" scoped>

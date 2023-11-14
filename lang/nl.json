@@ -22,10 +22,11 @@
   },
   "start": {
     "welcome": "Welkom bij",
-    "swarma": "Swarma",
+    "swarma": "The Swarming Way",
     "create-swarm": "Maak swarm"
   },
   "result": {
-    "home": "Home pagina"
+    "home": "Home pagina",
+    "new": "Nog een vraag"
   }
 }

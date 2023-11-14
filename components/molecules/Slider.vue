@@ -1,5 +1,5 @@
 <template>
-  <div class="slider">
+  <div v-if="sessionState" class="slider">
     <div v-if="explanation" class="decision-explanation">
       <BaseText class="explain">{{
         $t("explanation.group-decision")
@@ -7,12 +7,12 @@
       <BaseIcon class="group-arrow" src="group_arrow"></BaseIcon>
     </div>
     <BaseTitle id="start" class="centered">{{
-      Math.round(currentValue)
+      Math.round(sessionState?.value)
     }}</BaseTitle>
 
     <div id="end" class="slider-buttons">
       <BaseSlider
-        v-model="currentValue"
+        v-model="sessionState.value"
         :min-value="minValue"
         :max-value="maxValue"
       ></BaseSlider>
@@ -34,7 +34,7 @@ const props = defineProps<{
   swarmingSession: ReturnType<typeof swarmingSocket>;
   explanation: boolean;
 }>();
-const { currentValue, sessionState } = props.swarmingSession;
+const { sessionState } = props.swarmingSession;
 const minValue = 0;
 const maxValue = sessionState.value?.range_max;
 </script>

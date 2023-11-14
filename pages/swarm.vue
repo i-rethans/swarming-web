@@ -24,4 +24,19 @@ watch(
     }
   },
 );
+
+watch(
+  () => swarmingSession?.reset.value,
+  (reset) => {
+    if (reset) {
+      router.push(
+        localePath({
+          name: "swarm",
+          query: { id: uuid },
+        }),
+      );
+      swarmingSession.reset.value = false;
+    }
+  },
+);
 </script>

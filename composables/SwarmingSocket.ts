@@ -15,13 +15,12 @@ export const swarmingSocket = (session_id: string) => {
 
   // Returned variables
   const participantId = uuidv4();
-  const currentValue = ref<number>(0);
   const numberOfParticipants = ref<number>(0);
-  const question = ref<string>("");
   const sessionState = ref<Session | null>(null);
   const admin = ref<boolean>(false);
   const state = ref<string>("");
   const error = ref<string | null>(null);
+  const reset = ref<boolean>(false);
 
 
   const startSession = () => {
@@ -58,9 +57,10 @@ export const swarmingSocket = (session_id: string) => {
     .receive("ok", (currentSessionState: Session) => {
       sessionState.value = currentSessionState
       numberOfParticipants.value = currentSessionState.participants.length
-      currentValue.value = currentSessionState.value
-      question.value = currentSessionState.question ? currentSessionState.question : ""
       state.value = currentSessionState.state
+      if(currentSessionState.participants.length == 1) {
+        admin.value = true
+      }
     })
     .receive("error", (reasons) => {
       error.value = "Server error";
@@ -79,9 +79,6 @@ export const swarmingSocket = (session_id: string) => {
     channel?.push("update_session", { question: questionInput, participant_id: participantId, range_max: rangeInput })
     .receive("ok", (session: Session) => {
       sessionState.value = session
-      question.value = session.question
-      admin.value = true
-
     })
     .receive("error", (reasons) => {
       console.log("error set question")
@@ -109,6 +106,12 @@ export const swarmingSocket = (session_id: string) => {
     channel?.push("change_direction", { participant_id: participantId, direction: direction })
   }
 
+  const newSession = ()  => {
+    console.log("newSession")
+    channel?.push("new_session", {})
+  }
+
+
 
   /*
    * Socket setup
@@ -116,12 +119,16 @@ export const swarmingSocket = (session_id: string) => {
   onMounted(() => {
    startSession()
    
+   channel.on("session_updated", (session: Session) => {
+    console.log("session update")
+    console.log(session)
+    sessionState.value = session
+  });
    
-   channel.on("value_update", (session: Session) => {
+  channel.on("value_update", (session: Session) => {
     console.log("value update")
     console.log(session)
     sessionState.value = session
-    currentValue.value = session.value ;
   });
 
   channel.on("new_participant", (message) => {
@@ -141,6 +148,13 @@ export const swarmingSocket = (session_id: string) => {
     state.value = "finished"
   });
   
+  channel.on("new_session", (session) => {
+    console.log("new_session")
+    reset.value = true
+
+    sessionState.value = session
+  });
+
   });
 
 
@@ -154,12 +168,12 @@ export const swarmingSocket = (session_id: string) => {
     state,
     startSwarming,
     changeDirection,
-    currentValue,
     updateSession,
     startSession,
     sessionState,
     numberOfParticipants,
-    question,
-    admin
+    reset,
+    admin,
+    newSession,
   };
 };

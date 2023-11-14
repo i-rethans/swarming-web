@@ -1,7 +1,7 @@
 <template>
-  <div class="result-value">
+  <div v-if="sessionState" class="result-value">
     <BaseText class="text-extra-extra-large centered result">{{
-      Math.round(currentValue)
+      Math.round(sessionState.value)
     }}</BaseText>
   </div>
 </template>
@@ -10,7 +10,7 @@
 const props = defineProps<{
   swarmingSession: ReturnType<typeof swarmingSocket>;
 }>();
-const { currentValue } = props.swarmingSession;
+const { sessionState } = props.swarmingSession;
 </script>
 
 <style lang="scss" scoped>
